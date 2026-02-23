@@ -1,0 +1,144 @@
+:root {
+  --background: #07AEEA;
+  --background-gradient: linear-gradient(135deg,rgba(7, 174, 234, 1) 0%, rgba(43, 245, 152, 1) 100%);
+
+  --color-dark: #191F37;
+  --background-dark-gradient: linear-gradient(135deg,rgba(15, 18, 33, 1) 0%, rgba(27, 33, 57, 1) 59%, rgba(69, 75, 109, 1) 82%, rgba(129, 123, 161, 1) 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-dark-gradient);
+  
+  /*background-image: url("../assets/stars.jpg");
+  background-size: 120vh 120vw;
+  background-repeat: no-repeat;*/
+
+  min-height: 100vh;
+  color: var(--color-dark);
+
+  /* -- Font Import -- */
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.navbar {
+  list-style-type: none;
+  border-radius: 24px;
+  background-color: #07aeea3d;
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  margin: 0;
+  margin-bottom: 24px;
+  padding: 0 8px;
+  overflow: hidden;
+}
+
+.navbar li {
+  border-radius: 16px;
+  margin: 8px 8px;
+  background-color: var(--color-dark);
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: aliceblue;
+  text-align: center;
+  padding: 6px 8px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  border-radius: 16px;
+  background-color: #07aeea77;
+}
+
+.main-content {
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  border-radius: 16px;
+  background-color: aliceblue;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
+
+  width: 90vw;
+  max-width: 1000px;
+  
+  margin: 16px 0;
+  padding: 0 16px;
+}
+
+.hero {
+  overflow: hidden;
+
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 56px;
+  text-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 0;
+  margin-top: 16px;
+}
+
+h1#hero-header {
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h3#quote {
+  font-style: italic;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  h1 {
+    font-size: 80px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  .main-content {
+    padding: 0 24px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  h1 {
+    font-size: 100px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  .main-content {
+    padding: 0 32px;
+  }
+}
