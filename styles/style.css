@@ -3,6 +3,7 @@
   --background-gradient: linear-gradient(135deg,rgba(7, 174, 234, 1) 0%, rgba(43, 245, 152, 1) 100%);
 
   --color-dark: #191F37;
+  --color-moon-grey: #454B6D;
   --background-dark-gradient: linear-gradient(135deg,rgba(15, 18, 33, 1) 0%, rgba(27, 33, 57, 1) 59%, rgba(69, 75, 109, 1) 82%, rgba(129, 123, 161, 1) 100%);
 }
 
@@ -35,23 +36,24 @@ body {
 }
 
 .navbar {
+  display: flex;
+
   list-style-type: none;
   border-radius: 24px;
-  background-color: #07aeea3d;
+  background-color: var(--color-moon-grey);
 
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   margin: 0;
+  margin-top: 12px;
   margin-bottom: 24px;
   padding: 0 8px;
-  overflow: hidden;
 }
 
 .navbar li {
   border-radius: 16px;
   margin: 8px 8px;
   background-color: var(--color-dark);
-  float: left;
 }
 
 .navbar li a {
