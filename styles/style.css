@@ -64,6 +64,15 @@ body {
   text-decoration: none;
 }
 
+.navbar li.active {
+  background-color: #B2B8CE;
+  color: #191F37;
+}
+
+.navbar li.active a{
+  color: var(--color-dark);
+}
+
 .navbar li a:hover {
   border-radius: 16px;
   background-color: #07aeea77;
