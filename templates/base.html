@@ -4,7 +4,7 @@
     {% block head %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link href="static/css/style.css" rel="stylesheet" />
+    <link href="/static/css/style.css" rel="stylesheet" />
     <title>{% block title %}Stephan Mundt{% endblock %}</title>
     {% endblock %}
 
@@ -19,9 +19,9 @@
   <body>
     <div class="center">
       <ul class="navbar">
-        <li class=""><a href="projects">Projects</a></li>
-        <li class="active"><a href="index">About</a></li>
-        <li class=""><a href="contact">Contact</a></li>
+        <li class=""><a href="/projects">Projects</a></li>
+        <li class="active"><a href="/index">About</a></li>
+        <li class=""><a href="/contact">Contact</a></li>
       </ul>
 
       {% block body %} {% endblock %}

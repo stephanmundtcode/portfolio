@@ -28,19 +28,17 @@ def projects() -> str:
     projects = load_json(PROJECT_DATA_PATH)
     for project in projects:
         project["tags"] = " | ".join(project["tags"])
-        print(project["tags"])
 
     return render_template('projects.html', projects=projects)
 
-'''@app.route('/projects/<slug>')
+@app.route('/projects/<slug>')
 def project(slug) -> str:
     projects = load_json(PROJECT_DATA_PATH)
     for project in projects:
         if slug == project["slug"]:
-            return project
+            return render_template('single_project.html', project=project)
     
-    return("The Project you are looking for is not available :(")
-'''
+    return "Sorry, unfortunately there is no project like that :("
 
 @app.route('/contact')
 def contact() -> str:
