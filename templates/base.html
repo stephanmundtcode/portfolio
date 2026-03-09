@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    {% block head %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="static/css/style.css" rel="stylesheet" />
+    <title>{% block title %}Stephan Mundt{% endblock %}</title>
+    {% endblock %}
+
+    <!-- load in font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="center">
+      <ul class="navbar">
+        <li class=""><a href="projects">Projects</a></li>
+        <li class="active"><a href="index">About</a></li>
+        <li class=""><a href="contact">Contact</a></li>
+      </ul>
+
+      {% block body %} {% endblock %}
+    </div>
+  </body>
+</html>

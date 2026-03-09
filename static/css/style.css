@@ -84,6 +84,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
   text-align: center;
   
   border-radius: 16px;
@@ -123,6 +125,83 @@ h3#quote {
   font-style: italic;
 }
 
+/* Projects Page Styling */
+
+.projects {
+  /*background-color: aqua;*/
+  margin-bottom: 16px;
+}
+
+.projects ul{
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+
+  display: flex;
+  row-gap: 16px;
+  
+  width: 90%;
+}
+
+.projects li{
+  /*background-color: #07AEEA;*/
+  width: 100%;
+}
+
+.projects li .project-cards {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 150px;
+  min-width: 250px;
+  width: 100%;
+
+  row-gap: 12px;
+
+  margin: 4px 0;
+  padding: 8px 16px;
+  text-align: left;
+
+  background-color: var(--color-dark);
+  color: aliceblue;
+  border-radius: 24px;
+
+  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+
+.projects li .project-cards h3 {
+  margin: 16px 0px;
+  padding-left: 2px;
+  margin-bottom: 0px;
+}
+
+.projects li .project-cards p {
+  margin: 0;
+}
+
+.projects li .project-cards span {
+  margin: 0;
+}
+
+.projects li .project-cards a {
+  color: aliceblue;
+  font-weight: 400;
+}
+
+.projects li .project-cards .link{
+  margin-top: auto;
+  align-self: flex-end;
+  padding: 4px 4px;
+}
+
+@media (max-width: 768px) {
+  .projects ul{
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media (min-width: 768px) {
 
@@ -136,6 +215,10 @@ h3#quote {
 
   .main-content {
     padding: 0 24px;
+  }
+
+  .projects ul{
+    flex-wrap: wrap;
   }
 }
 
@@ -151,5 +234,9 @@ h3#quote {
 
   .main-content {
     padding: 0 32px;
+  }
+
+  .projects ul{
+    flex-wrap: wrap;
   }
 }
