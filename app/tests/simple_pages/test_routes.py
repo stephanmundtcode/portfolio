@@ -13,7 +13,6 @@ def test_index_succes(client):
     assert response.status_code == 200
 
 # or tries to access /index
-
 def test_index_redirect_succes(client):
     #Page loads
     response = client.get("/index")
@@ -23,7 +22,6 @@ def test_index_redirect_succes(client):
 #   V
 
 # User accesses contacts
-
 def test_contacts_succes(client):
     #Page loads
     response = client.get("contact")

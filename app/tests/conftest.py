@@ -7,5 +7,3 @@ def client():
 
     with app.app_context():
         yield app.test_client()
-
-        

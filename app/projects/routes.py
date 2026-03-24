@@ -29,4 +29,4 @@ def project(slug) -> str:
         if slug == project["slug"]:
             return render_template('projects/single_project.html', project=project)
     
-    return "Sorry, unfortunately there is no project like that :("
+    return "Sorry, unfortunately there is no project like that :(", 404
