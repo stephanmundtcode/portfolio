@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+<!--blocker-->
+{% block title %} Stephan Mundt | Projects {% endblock%}
+
+<!--blocker-->
+{% block body %}
+<div class="main-content">
+  <h1>My Projects</h1>
+  <div class="projects">
+    <ul>
+      {% for project in projects %}
+      <li>
+        <div class="project-cards">
+          <h3>
+            <a href="projects/{{project['slug']}}">{{ project["title"] }}</a>
+          </h3>
+          <p>{{project["description"]}}</p>
+          <span> {{ project["tags"] }} </span>
+          <div class="link"><a href="{{ project['link'] }}">GitHub</a></div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

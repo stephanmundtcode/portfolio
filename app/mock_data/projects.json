@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "slug": "weather-app",
+    "title": "Weather App",
+    "description": "A web app that fetches real-time weather data from an API.",
+    "tags": ["Python", "API", "Flask"],
+    "link": "https://github.com/stephanmundtcode",
+    "year": 2024
+  },
+  {
+    "id": 2,
+    "slug": "portfolio-website",
+    "title": "Portfolio Website",
+    "description": "A personal portfolio to showcase projects and skills.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "link": "https://github.com/stephanmundtcode",
+    "year": 2025
+  },
+  {
+    "id": 3,
+    "slug": "todo-list-app",
+    "title": "Todo List App",
+    "description": "A simple task manager with create, edit and delete functionality.",
+    "tags": ["Flask", "SQLite", "HTML"],
+    "link": "https://github.com/stephanmundtcode",
+    "year": 2025
+  },
+  {
+    "id": 4,
+    "slug": "budget-tracker",
+    "title": "Budget Tracker",
+    "description": "A personal finance tool to track income and expenses.",
+    "tags": ["Python", "Flask", "Chart.js"],
+    "link": "https://github.com/stephanmundtcode",
+    "year": 2026
+  },
+
+  {
+    "id": 5,
+    "slug": "charly-db",
+    "title": "Charly ist ne coole socke",
+    "description": "blablabla",
+    "tags": ["Python", "Flask", "Chart.js"],
+    "link": "https://github.com/stephanmundtcode",
+    "year": 2027
+  }
+]
