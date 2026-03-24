@@ -12,6 +12,3 @@ def create_app() -> app:
 def register_blueprints(app: Flask) -> None:
     app.register_blueprint(projects.routes.blueprint)
     app.register_blueprint(simple_pages.routes.blueprint)
-
-# Website: https://codecookies.xyz/flask-tutorial/v1/templating-with-jinja
-# Current Progress: Jinja: loop (and conditions)
