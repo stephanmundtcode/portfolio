@@ -1,9 +1,10 @@
 from flask import Flask, app, render_template, redirect, url_for
-from . import projects, simple_pages
+from . import projects, simple_pages, admin
 
 def create_app() -> app:
     app: Flask = Flask(__name__)
     app.config.from_object('app.config')
+    app.url_map.strict_slashes = False
 
     register_blueprints(app)
 
@@ -12,3 +13,4 @@ def create_app() -> app:
 def register_blueprints(app: Flask) -> None:
     app.register_blueprint(projects.routes.blueprint)
     app.register_blueprint(simple_pages.routes.blueprint)
+    app.register_blueprint(admin.routes.blueprint)
