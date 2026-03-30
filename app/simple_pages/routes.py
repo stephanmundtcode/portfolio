@@ -7,7 +7,7 @@ def index() -> str:
     return render_template('simple_pages/index.html')
 
 @blueprint.get('/index')
-def index_redirect():
+def index_redirect() -> str:
     return redirect(url_for('simple_pages.index'))
 
 @blueprint.get('/contact')
