@@ -1,3 +1,4 @@
+from .models import Project
 from flask import Blueprint, render_template
 import json
 

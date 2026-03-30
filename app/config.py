@@ -1,4 +1,3 @@
-from nt import environ
 from dotenv import load_dotenv
 from os import environ
 
