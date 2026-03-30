@@ -12,4 +12,4 @@ class Project(db.Model):
     tags: Mapped[str]
     link: Mapped[str]
     year: Mapped[int]
-    picture_url: Mapped[str]
+    picture_url: Mapped[str] = mapped_column(nullable=True)
