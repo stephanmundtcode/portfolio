@@ -10,7 +10,7 @@ project_tag = db.Table("project_tag",
 )
 
 class Project(db.Model):
-    id: Mapped[uuid.UUID] = mapped_column(primary_key=True)
+    id: Mapped[uuid.UUID] = mapped_column(default=uuid.uuid4, primary_key=True)
     slug: Mapped[str] = mapped_column(unique=True)
     title: Mapped[str] = mapped_column(unique=True)
     description: Mapped[str]
@@ -22,6 +22,6 @@ class Project(db.Model):
 # n to n relationship between tags and Projects
 
 class Tag(db.Model):
-    id: Mapped[uuid.UUID] = mapped_column(primary_key=True)
+    id: Mapped[uuid.UUID] = mapped_column(default=uuid.uuid4, primary_key=True)
     tag: Mapped[str] = mapped_column(unique=True)
     projects: Mapped[list["Project"]] = relationship(secondary=project_tag, back_populates="tags")
