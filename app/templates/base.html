@@ -22,21 +22,23 @@
   <body>
     <div class="center">
       <ul class="navbar">
-        <li
-          class="{{ 'active' if request.endpoint == 'projects.projects' else '' }}"
-        >
-          <a href="/projects">Projects </a>
-        </li>
-        <li
-          class="{{ 'active' if request.endpoint == 'simple_pages.index' else '' }}"
-        >
-          <a href="/index">About</a>
-        </li>
-        <li
-          class="{{ 'active' if request.endpoint == 'simple_pages.contact' else '' }}"
-        >
-          <a href="/contact">Contact</a>
-        </li>
+        <div class="navbar-elements">
+          <li
+            class="{{ 'active' if request.endpoint == 'projects.projects' else '' }}"
+          >
+            <a href="/projects">Projects </a>
+          </li>
+          <li
+            class="{{ 'active' if request.endpoint == 'simple_pages.index' else '' }}"
+          >
+            <a href="/index">About</a>
+          </li>
+          <li
+            class="{{ 'active' if request.endpoint == 'simple_pages.contact' else '' }}"
+          >
+            <a href="/contact">Contact</a>
+          </li>
+        </div>
       </ul>
 
       {% block body %} {% endblock %}

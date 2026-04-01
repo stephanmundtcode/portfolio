@@ -34,6 +34,7 @@
 
   /* Radii */
   --radius-md: 12px;
+  --radius-nb: 16px;
   --radius-lg: 20px;
 
   /* Motion */
@@ -89,10 +90,17 @@ body {
   list-style-type: none;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-nb);
   padding: var(--space-xs);
   margin-bottom: var(--space-xl);
   box-shadow: var(--shadow-sm);
+}
+
+.navbar .navbar-elements {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin: auto 2px;
 }
 
 .navbar li {
@@ -242,9 +250,10 @@ h3#quote {
 
 .projects li .project-cards h3 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin: 0;
+  color: var(--accent);
 }
 
 .projects li .project-cards p {
@@ -254,7 +263,7 @@ h3#quote {
   margin: 0;
 }
 
-.projects li .project-cards span {
+.projects li .project-cards span.tags {
   font-size: 12px;
   color: var(--text-muted);
   letter-spacing: 0.04em;
@@ -262,7 +271,6 @@ h3#quote {
 }
 
 .projects li .project-cards a {
-  color: var(--accent);
   text-decoration: none;
   font-weight: 400;
   transition: color var(--duration-fast) var(--ease-in-out);
@@ -272,26 +280,27 @@ h3#quote {
   color: var(--accent-hover);
 }
 
-.projects li .project-cards .link {
+.projects li .project-cards .link-div {
   margin-top: auto;
   align-self: flex-end;
-  padding-top: var(--space-sm);
+  padding-top: var(--space-sm);  
 }
 
-.projects li .project-cards .link a {
+.projects li .project-cards .link-div a {
   font-size: 13px;
   letter-spacing: 0.03em;
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
+  color: var(--accent);
 }
 
-.projects li .project-cards .link a::after {
+.projects li .project-cards a.link::after {
   content: "\2192";
   transition: transform var(--duration-fast) var(--ease-out);
 }
 
-.projects li .project-cards .link a:hover::after {
+.projects li .project-cards a.link:hover::after {
   transform: translateX(4px);
 }
 
