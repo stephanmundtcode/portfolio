@@ -4,6 +4,9 @@
 {% block title %} Stephan Mundt | Contact {% endblock %}
 <!--blocker-->
 
+{% block scripts %} <script defer src="{{ url_for('static', filename='js/form-submit.js') }}"></script> {% endblock %}
+<!--blocker-->
+
 {% block body %}
 <div class="main-content">
   <h1>Lets get in Contact!</h1>
@@ -31,4 +34,6 @@
     <div id="formFeedback" class="hidden"></div>
   </div>
 </div>
+
+<script src="{{ url_for('static', filename='js/form-submit.js') }}"></script>
 {% endblock %}
