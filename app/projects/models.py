@@ -19,9 +19,15 @@ class Project(db.Model):
     year: Mapped[int]
     picture_url: Mapped[str] = mapped_column(nullable=True)
 
+    def __repr__(self) -> str:
+        return f"<Project {self.title}>"
+
 # n to n relationship between tags and Projects
 
 class Tag(db.Model):
     id: Mapped[uuid.UUID] = mapped_column(default=uuid.uuid4, primary_key=True)
     tag: Mapped[str] = mapped_column(unique=True)
     projects: Mapped[list["Project"]] = relationship(secondary=project_tag, back_populates="tags")
+
+    def __repr__(self) -> str:
+        return f"<Tag {self.tag}>"
