@@ -41,7 +41,30 @@
   <div id="formFeedback" class="hidden">
     <h1>Thank you for your message!</h1>
     <p>I will get back to you as soon as possible.</p>
-    <div id="typingGame"></div>
+  </div>
+</div>
+
+<div id="main-content-2" class="main-content hidden">
+  <div id="typingGame">
+    <h3 class="typing-label">
+      While you wait for my response, lets see how fast you can type :)
+    </h3>
+    <p id="typingTarget" class="typing-target">${sentence}</p>
+    <input
+      id="typingInput"
+      class="typing-input"
+      type="text"
+      placeholder="Start typing..."
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <div id="typingStats" class="typing-stats hidden">
+      <div class="stats">
+        <span id="wpmResult"></span>
+        <span id="timeResult"></span>
+      </div>
+      <button id="retryBtn" class="typing-retry">Try again</button>
+    </div>
   </div>
 </div>
 {% endblock %}
