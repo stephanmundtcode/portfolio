@@ -1,6 +1,7 @@
 from flask import Flask, app, render_template, redirect, url_for
 from . import projects, simple_pages, admin
 from app.extensions.database import db, migrate
+from app.scripts.seed import run_seed
 
 
 def create_app() -> app:
@@ -10,6 +11,10 @@ def create_app() -> app:
 
     register_extension(app)
     register_blueprints(app)
+
+    @app.cli.command("seed")
+    def seed():
+        run_seed()
 
     return app
 #Blueprints

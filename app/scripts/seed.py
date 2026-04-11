@@ -1,5 +1,4 @@
 from sqlalchemy import select
-from app.app import create_app
 from app.projects.models import Project, Tag
 from app.extensions.database import db
 
@@ -7,10 +6,7 @@ from app.projects.routes import load_json
 
 PROJECT_DATA_PATH: str = "app/mock_data/projects.json"
 
-if __name__ == '__main__':
-    app = create_app()
-    app.app_context().push()
-
+def run_seed():
     projects = load_json(PROJECT_DATA_PATH)
 
     for project in projects:
