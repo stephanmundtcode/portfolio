@@ -1,10 +1,10 @@
 from werkzeug.security import check_password_hash
-from flask import Blueprint, render_template, request, url_for, redirect, session
+from flask import Blueprint, render_template, request, url_for, redirect, session, flash
 from dotenv import load_dotenv
 from sqlalchemy import select
 from app.extensions.database import db
 from app.simple_pages.models import Contact
-from app.projects.models import Project
+from app.projects.models import Project, Tag
 
 import os
 
@@ -61,6 +61,100 @@ def projects():
 
     return render_template("admin/projects.html", projects=projects)
 
+@blueprint.post("/admin/projects/add")
+def add_project():
+    check = login_required()
+    if check:
+        return check
 
+    new_project = Project(
+        title=request.form.get("title"),
+        slug=request.form.get("slug"),
+        description=request.form.get("description"),
+        link=request.form.get("link"),
+        year=request.form.get("year"),
+        picture_url=request.form.get("picture_url") or None
+    )
 
+    tag_string = request.form.get("tags", "")
+    for tag_name in tag_string.split(","):
+        tag_name = tag_name.strip()
+        if tag_name:
+            stmt = select(Tag).where(Tag.tag == tag_name)
+            existing_tag = db.session.execute(stmt).scalar()
+            if existing_tag is None:
+                existing_tag = Tag(tag=tag_name)
+                db.session.add(existing_tag)
+            new_project.tags.append(existing_tag)
 
+    db.session.add(new_project)
+    db.session.commit()
+    flash("Project added!")
+    return redirect(url_for("admin.projects"))
+
+@blueprint.post("/admin/projects/delete/<slug>")
+def delete_project(slug):
+    check = login_required()
+    if check:
+        return check
+
+    stmt = select(Project).where(Project.slug == slug)
+    project = db.session.execute(stmt).scalar()
+
+    if project:
+        db.session.delete(project)
+        db.session.commit()
+        flash("Project deleted!")
+
+    return redirect(url_for("admin.projects"))
+
+@blueprint.get("/admin/projects/edit/<slug>")
+def edit_project(slug):
+    check = login_required()
+    if check:
+        return check
+
+    stmt = select(Project).where(Project.slug == slug)
+    project = db.session.execute(stmt).scalar()
+
+    if not project:
+        flash("Project not found!")
+        return redirect(url_for("admin.projects"))
+
+    return render_template("admin/edit_project.html", project=project)
+
+@blueprint.post("/admin/projects/edit/<slug>")
+def update_project(slug):
+    check = login_required()
+    if check:
+        return check
+
+    stmt = select(Project).where(Project.slug == slug)
+    project = db.session.execute(stmt).scalar()
+
+    if not project:
+        flash("Project not found!")
+        return redirect(url_for("admin.projects"))
+
+    project.title = request.form.get("title")
+    project.slug = request.form.get("slug")
+    project.description = request.form.get("description")
+    project.link = request.form.get("link")
+    project.year = request.form.get("year")
+    project.picture_url = request.form.get("picture_url") or None
+
+    project.tags.clear()
+    tag_string = request.form.get("tags", "")
+    for tag_name in tag_string.split(","):
+        tag_name = tag_name.strip()
+        if tag_name:
+            stmt = select(Tag).where(Tag.tag == tag_name)
+            existing_tag = db.session.execute(stmt).scalar()
+            if existing_tag is None:
+                existing_tag = Tag(tag=tag_name)
+                db.session.add(existing_tag)
+            project.tags.append(existing_tag)
+
+    db.session.commit()
+    flash("Project updated!")
+    return redirect(url_for("admin.projects"))

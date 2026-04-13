@@ -13,6 +13,7 @@
   --accent: #5E9342;
   --accent-hover: #74AA58;
   --accent-glow: rgba(94, 147, 66, 0.12);
+  --accent-glow-hover: rgba(94, 147, 66, 0.25);
   --accent-error: rgb(200, 110, 60);
   --accent-error-bg: rgba(200, 110, 60, 0.06);
   --accent-error-shadow: rgba(200, 110, 60, 0.15);
@@ -620,7 +621,69 @@ button {
   border-radius: var(--radius-md);
   padding: var(--space-sm) var(--space-md);
   box-shadow: 0 4px 20px rgba(200, 110, 60, 0.3);
+
+  animation: fadeUp var(--duration-normal) var(--ease-out) both;
+  animation-delay: 0.3s;
 }
+
+.main-content.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content.admin-dashboard a{
+  margin-left: auto;
+  margin-bottom: var(--space-md);
+
+  background-color: var(--bg-surface);
+  color: var(--accent);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--accent);
+  text-decoration: none;
+
+  box-shadow: 0 4px 20px var(--accent-glow);
+
+  transition: background-color var(--duration-fast) var(--ease-in-out), color var(--duration-fast) var(--ease-in-out), border-color var(--duration-fast) var(--ease-in-out), box-shadow var(--duration-fast) var(--ease-in-out), scale var(--duration-fast) var(--ease-in-out);
+}
+
+.main-content.admin-dashboard a:hover {
+  background-color: var(--accent);
+  color: var(--text-bright);
+  box-shadow: 0 4px 24px var(--accent-glow-hover);
+}
+
+.main-content.admin-dashboard a:active {
+  scale: 0.97;
+}
+
+
+.inquiry-card {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.inquiry-meta {
+  display: flex;
+  gap: var(--space-md);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.inquiry-message {
+  color: var(--text-primary);
+}
+
 
 
 /* === Animations === */
