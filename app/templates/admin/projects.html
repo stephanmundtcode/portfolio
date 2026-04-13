@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block title %}Admin | Projects{% endblock %} {%
+block body %}
+<div class="main-content">
+  <div class="admin-header">
+    <h1>Projects</h1>
+    <a href="{{ url_for('admin.index') }}">← Back to Dashboard</a>
+  </div>
+
+  <section class="project-list">
+    {% for project in projects %}
+    <div class="project-row">
+      <span>{{ project.title }}</span>
+      <span>{{ project.year }}</span>
+      <div class="project-actions">
+        <a href="#">Edit</a>
+        <form method="POST" action="#">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="project-form">
+    <h2>Add Project</h2>
+    <form method="POST" action="#">
+      <input type="text" name="title" placeholder="Title" />
+      <input type="text" name="slug" placeholder="Slug" />
+      <textarea name="description" placeholder="Description"></textarea>
+      <input type="text" name="link" placeholder="Link" />
+      <input type="number" name="year" placeholder="Year" />
+      <input
+        type="text"
+        name="picture_url"
+        placeholder="Picture URL (optional)"
+      />
+      <input type="text" name="tags" placeholder="Tags (comma separated)" />
+      <button type="submit">Add Project</button>
+    </form>
+  </section>
+</div>
+{% endblock %}

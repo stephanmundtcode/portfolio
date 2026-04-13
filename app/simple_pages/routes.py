@@ -25,5 +25,5 @@ def contact() -> str:
         new_entry = Contact(name=name, email=email, message=message, created_at=date)
         db.session.add(new_entry)
         db.session.commit()
-        
+
     return render_template('simple_pages/contact.html')

@@ -1,11 +1,33 @@
 {% extends 'base.html' %}
 
-<!--blocker-->
-{% block title %} Stephan Mundt | Admin {% endblock%}
+<!-- blocker -->
+{% block title %}Stephan Mundt | Admin{% endblock %}
 
-<!--blocker-->
+<!-- blocker -->
 {% block body %}
-<div class="main-content">
-  <h1>You're the Boss</h1>
+<div class="main-content admin-dashboard">
+  <div class="admin-header">
+    <h1>You're the Boss</h1>
+    <a href="{{ url_for('admin.projects') }}" class="btn btn-primary"
+      >Manage Projects</a
+    >
+  </div>
+
+  <section class="admin-inquiries">
+    <h2>Contact Inquiries</h2>
+
+    {% if inquiries %} {% for inquiry in inquiries %}
+    <div class="inquiry-card">
+      <div class="inquiry-meta">
+        <span class="inquiry-name">{{ inquiry.name }}</span>
+        <span class="inquiry-email">{{ inquiry.email }}</span>
+        <span class="inquiry-date">{{ inquiry.created_at }}</span>
+      </div>
+      <p class="inquiry-message">{{ inquiry.message }}</p>
+    </div>
+    {% endfor %} {% else %}
+    <p class="empty-state">No inquiries yet.</p>
+    {% endif %}
+  </section>
 </div>
 {% endblock %}

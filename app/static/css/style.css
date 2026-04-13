@@ -12,8 +12,10 @@
   /* Accent */
   --accent: #5E9342;
   --accent-hover: #74AA58;
-  --accent-error: #FF0000;
   --accent-glow: rgba(94, 147, 66, 0.12);
+  --accent-error: rgb(200, 110, 60);
+  --accent-error-bg: rgba(200, 110, 60, 0.06);
+  --accent-error-shadow: rgba(200, 110, 60, 0.15);
 
   /* Text */
   --text-primary: #1C1F1A;
@@ -26,6 +28,8 @@
   --border-subtle: rgba(0, 0, 0, 0.08);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+
 
   /* Spacing */
   --space-xs: 4px;
@@ -320,7 +324,7 @@ h3#quote {
   translate: 1px 0;
 }
 
-/* === Contact === */
+/* === Contact + Login === */
 
 input,
 textarea,
@@ -606,6 +610,18 @@ button {
   scale: 0.97;
   border-color: transparent;
 }
+
+/* === Admin === */
+
+#loginError {
+  color: var(--accent-error);
+  border: 1px solid var(--accent-error);
+  background-color: var(--accent-error-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  box-shadow: 0 4px 20px rgba(200, 110, 60, 0.3);
+}
+
 
 /* === Animations === */
 
