@@ -663,6 +663,11 @@ button {
   scale: 0.97;
 }
 
+.admin-inquiries h2{
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  margin-left: var(--space-md);
+}
 
 .inquiry-card {
   border: 1px solid var(--border-subtle);
